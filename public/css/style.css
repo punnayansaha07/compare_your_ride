@@ -1,0 +1,569 @@
+/* Global Styles */
+:root {
+  --primary-color: #4a6de5;
+  --primary-dark: #3955b3;
+  --secondary-color: #ff6b6b;
+  --light-color: #f4f4f8;
+  --dark-color: #333;
+  --success-color: #28a745;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+  --gray-color: #6c757d;
+  --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: var(--light-color);
+  color: var(--dark-color);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h1, h2, h3 {
+  margin-bottom: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--dark-color);
+}
+
+ul {
+  list-style: none;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #ff4f4f;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Header Styles */
+header {
+  background-color: white;
+  box-shadow: var(--box-shadow);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.logo h1 {
+  color: var(--primary-color);
+  margin: 0;
+  font-size: 24px;
+}
+
+.nav-links ul {
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 30px;
+}
+
+.nav-links a {
+  color: var(--dark-color);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--primary-color);
+}
+
+/* Main Content */
+main {
+  padding: 100px 0 50px;
+  min-height: calc(100vh - 120px);
+}
+
+.section {
+  display: none;
+}
+
+.section.active {
+  display: block;
+}
+
+/* Home/Search Section */
+.search-form {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  margin-bottom: 30px;
+}
+
+.results {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  display: none;
+}
+
+.ride-option {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ride-service {
+  margin-bottom: 30px;
+}
+
+.ride-service h3 {
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+
+.ride-info {
+  flex: 1;
+}
+
+.ride-price {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--primary-color);
+  min-width: 120px;
+  text-align: right;
+}
+
+.ride-eta {
+  font-size: 14px;
+  color: var(--gray-color);
+}
+
+/* History Section */
+.history-list {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+}
+
+.history-item {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.history-item:hover {
+  background-color: #f9f9f9;
+}
+
+.history-date {
+  font-size: 14px;
+  color: var(--gray-color);
+}
+
+/* Auth Section */
+.auth-container {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+}
+
+.tabs {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 10px;
+  background-color: #f4f4f8;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.tab-btn.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Profile Section */
+.profile-info {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+}
+
+/* Footer */
+footer {
+  background-color: white;
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Toast Notifications */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--dark-color);
+  color: white;
+  padding: 15px 25px;
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.toast.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.toast.success {
+  background-color: var(--success-color);
+}
+
+.toast.error {
+  background-color: var(--danger-color);
+}
+
+.empty-message {
+  text-align: center;
+  color: var(--gray-color);
+  padding: 20px;
+}
+
+/* Add this after the results section */
+
+.distance-info {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  border-left: 4px solid var(--primary-color);
+}
+
+.distance-info p {
+  margin: 5px 0;
+}
+
+.surge {
+  color: var(--danger-color);
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+  }
+
+  .nav-links.active {
+    display: block;
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+  
+  .ride-option {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .ride-price {
+    margin-top: 10px;
+  }
+}
+
+/* Add CSS for the service connections section */
+.service-connections {
+    margin-top: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-connections h3 {
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.service-connections > p {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.connection-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.connection-card {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.connection-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.connection-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+}
+
+.connection-logo i {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+#uberConnection .connection-logo {
+    background-color: #000;
+}
+
+#uberConnection .connection-logo i {
+    color: #fff;
+}
+
+#olaConnection .connection-logo {
+    background-color: #4caf50;
+}
+
+#olaConnection .connection-logo i {
+    color: #fff;
+}
+
+#rapidoConnection .connection-logo {
+    background-color: #ff9800;
+}
+
+#rapidoConnection .connection-logo i {
+    color: #fff;
+}
+
+.connection-info {
+    flex: 1;
+}
+
+.connection-info h4 {
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+.connection-info p {
+    margin: 0.25rem 0 0;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.connection-action {
+    margin-left: 0.5rem;
+}
+
+.connection-info-box {
+    display: flex;
+    align-items: flex-start;
+    background-color: #e8f4fd;
+    border-radius: 6px;
+    padding: 1rem;
+    color: #2171a1;
+}
+
+.connection-info-box i {
+    margin-right: 0.75rem;
+    font-size: 1.25rem;
+}
+
+.connection-info-box p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Connected state */
+.connection-card.connected {
+    border: 1px solid #4caf50;
+}
+
+.connection-card.connected .connection-info p {
+    color: #4caf50;
+    font-weight: 500;
+}
+
+.connection-card.connected .connection-action .btn {
+    background-color: #f0f0f0;
+    color: #666;
+}
+
+.connection-card.connected .connection-action .btn:hover {
+    background-color: #e0e0e0;
+}
+
+/* Styled for connection button */
+.connection-action .btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+}
+
+/* Google Places Autocomplete styling */
+.pac-container {
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 3px;
+    z-index: 1050 !important;
+}
+
+.pac-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--dark-color);
+    border-top: 1px solid #f0f0f0;
+}
+
+.pac-item:first-child {
+    border-top: none;
+}
+
+.pac-item:hover {
+    background-color: var(--light-color);
+}
+
+.pac-item-query {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.pac-icon {
+    margin-right: 8px;
+}
+
+.pac-matched {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* Improve form input styling for autocomplete */
+.form-group input {
+    transition: var(--transition);
+    position: relative;
+}
+
+.form-group input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(74, 109, 229, 0.1);
+    outline: none;
+} 
